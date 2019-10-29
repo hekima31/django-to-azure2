@@ -1,0 +1,17 @@
+{% extends "blog/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="content section">
+    <!--This places the form that it can be displayed on the page-->
+    <form method="POST"> 
+        {% csrf_token %}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">Blog Post</legend>
+            {{form|crispy }}
+        </fieldset>
+        <div class="form-group">
+            <button class= "btn btn-outline-info" type="submit">Post Blog</button>
+        </div>
+    </form>
+</div>
+{% endblock content%}
