@@ -20,10 +20,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'ulh9caf*uum&oa2#6gwg*aw4p4@%6mt+k5ufa4-&2tz-n^szev'
+SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -122,22 +122,22 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-#Changing the default directory of where media is saved
-MEDIA_ROOT=os.path.join(BASE_DIR,"media")
+# Changing the default directory of where media is saved
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
-#Where media can be accessed through the browser
-MEDIA_URL="/media/" 
+# Where media can be accessed through the browser
+MEDIA_URL = "/media/"
 
-#Setting what version of Bootstrap to be used when Crispy template is loaded.
-CRISPY_TEMPLATE_PACK ='bootstrap4'
+# Setting what version of Bootstrap to be used when Crispy template is loaded.
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
-#Changing the default refirect URL when...? (Confirm)
+# Changing the default refirect URL when...? (Confirm)
 LOGIN_REDIRECT_URL = 'blog-home'
 
-#Setting where decorator routes when page is opened by inauthenticated user.
+# Setting where decorator routes when page is opened by inauthenticated user.
 LOGIN_URL = 'login'
 
-#Email settings to enable password reset
+# Email settings to enable password reset
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 # EMAIL_HOST = "smtp.gmail.com"
 EMAIL_HOST = "smtp.office365.com"
@@ -145,7 +145,7 @@ EMAIL_PORT = 587
 # EMAIL_PORT = 25
 EMAIL_USE_TLS = True
 
-#Passing in email credentials via environment variables
+# Passing in email credentials via environment variables
 # DEFAULT_FROM_EMAIL = os.environ.get("GMAIL_USERNAME")
 # EMAIL_FROM = os.environ.get("GMAIL_USERNAME")
 # EMIL_HOST_USER = os.environ.get("GMAIL_USERNAME")
@@ -153,5 +153,14 @@ EMAIL_USE_TLS = True
 
 DEFAULT_FROM_EMAIL = os.environ.get("OUTLOOK_USERNAME")
 # EMAIL_FROM = os.environ.get("OUTLOOK_USERNAME")
-EMAIL_HOST_USER =os.environ.get("OUTLOOK_USERNAME")
+EMAIL_HOST_USER = os.environ.get("OUTLOOK_USERNAME")
 EMAIL_HOST_PASSWORD = os.environ.get("OUTLOOK_PASSWORD")
+
+
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
+SECURE_CONTENT_TYPE_NOSNIFF = True
+SECURE_BROWSER_XSS_FILTER = True
+X_FRAME_OPTIONS = "DENY"
+SECURE_SSL_REDIRECT = True
+SECURE_SSL_REDIRECT = True
