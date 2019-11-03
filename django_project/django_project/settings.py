@@ -122,6 +122,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+# Directory when static files when "collectstatic" is run
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
+
 # Changing the default directory of where media is saved
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
