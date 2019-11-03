@@ -36,7 +36,7 @@ urlpatterns = [
         template_name="users/password_reset_confirm.html"), name="password_reset_confirm"),
     path('password-reset-complete/', auth_views.PasswordResetCompleteView.as_view(
         template_name="users/password_reset_complete.html"), name="password_reset_complete"),
-    path('blog/', include("blog.urls")),
+    path('', include("blog.urls")),
 ]
 
 # Ensures that this runs only in dev(debug) mode.
