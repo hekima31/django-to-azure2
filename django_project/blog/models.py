@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.utils import timezone
 from django.urls import reverse
+from PIL import Image
 
 
 class Post(models.Model):
@@ -12,6 +13,8 @@ class Post(models.Model):
     # required
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     objects = models.Manager()
+    # Don't necessarily need a default image for each blog
+    image = models.ImageField(upload_to="post_pics")
 
     # Telling the function how the Post function should be returned
     # To return it in readable format
