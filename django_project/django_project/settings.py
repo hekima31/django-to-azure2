@@ -122,22 +122,13 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
-STATICFILES_STORAGE = 'storages.backends.azure_storage.AzureStorage'
-DEFAULT_FILE_STORAGE = 'django_project.custom_azure.AzureMediaStorage'
-
-STATIC_LOCATION = "static"
+# Directory when static files when "collectstatic" is run
 # For Heroku's setup
-STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
-MEDIA_LOCATION = "media"
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
+STATIC_LOCATION = "/static/"
+
+MEDIA_LOCATION = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
-
-AZURE_ACCOUNT_NAME = os.environ.get("AZURE_STORAGE_ACCOUNT_NAME")
-AZURE_ACCOUNT_KEY = os.environ.get("AZURE_STORAGE_ACCOUNT_KEY1")
-AZURE_CUSTOM_DOMAIN = f'{AZURE_ACCOUNT_NAME}.blob.core.windows.net'
-AZURE_CONTAINER = "static"
-STATIC_URL = f'https://{AZURE_CUSTOM_DOMAIN}/{STATIC_LOCATION}/'
-MEDIA_URL = f'https://{AZURE_CUSTOM_DOMAIN}/{MEDIA_LOCATION}/'
-
 
 # Setting what version of Bootstrap to be used when Crispy template is loaded.
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
@@ -174,3 +165,16 @@ EMAIL_HOST_PASSWORD = os.environ.get("OUTLOOK_PASSWORD")
 # SECURE_BROWSER_XSS_FILTER = True
 # X_FRAME_OPTIONS = "DENY"
 # SECURE_SSL_REDIRECT = True
+
+
+STATICFILES_STORAGE = 'storages.backends.azure_storage.AzureStorage'
+DEFAULT_FILE_STORAGE = 'django_project.custom_azure.AzureMediaStorage'
+
+
+AZURE_ACCOUNT_NAME = os.environ.get("AZURE_STORAGE_ACCOUNT_NAME")
+AZURE_ACCOUNT_KEY = os.environ.get("AZURE_STORAGE_ACCOUNT_KEY1")
+AZURE_CUSTOM_DOMAIN = f'{AZURE_ACCOUNT_NAME}.blob.core.windows.net'
+AZURE_CONTAINER = "static"
+STATIC_URL = f'https://{AZURE_CUSTOM_DOMAIN}/{STATIC_LOCATION}/'
+# Where media can be accessed through the browser
+MEDIA_URL = f'https://{AZURE_CUSTOM_DOMAIN}/{MEDIA_LOCATION}/'
