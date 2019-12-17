@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'storages',
+    'azure',
 ]
 
 MIDDLEWARE = [
@@ -120,16 +122,19 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
-STATIC_URL = '/static/'
+STATICFILES_STORAGE = 'storages.backends.azure_storage.AzureStorage'
+DEFAULT_FILE_STORAGE = 'django_project.custom_azure.AzureMediaStorage'
 
-# Directory when static files when "collectstatic" is run
-STATIC_ROOT = os.path.join(BASE_DIR, "static")
+STATIC_LOCATION = "static"
+MEDIA_LOCATION = "media"
 
-# Changing the default directory of where media is saved
-MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+AZURE_ACCOUNT_NAME = os.environ.get("AZURE_STORAGE_ACCOUNT_NAME")
+AZURE_ACCOUNT_KEY = os.environ.get("AZURE_STORAGE_ACCOUNT_KEY1")
+AZURE_CUSTOM_DOMAIN = f'{AZURE_ACCOUNT_NAME}.blob.core.windows.net'
+AZURE_CONTAINER = "static"
+STATIC_URL = f'https://{AZURE_CUSTOM_DOMAIN}/{STATIC_LOCATION}/'
+MEDIA_URL = f'https://{AZURE_CUSTOM_DOMAIN}/{MEDIA_LOCATION}/'
 
-# Where media can be accessed through the browser
-MEDIA_URL = "/media/"
 
 # Setting what version of Bootstrap to be used when Crispy template is loaded.
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
