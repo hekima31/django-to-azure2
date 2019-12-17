@@ -124,7 +124,12 @@ USE_TZ = True
 
 # Directory when static files when "collectstatic" is run
 # For Heroku's setup
-STATIC_ROOT = os.path.join(BASE_DIR, "static")
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# Extra places for collectstatic to find static files.
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
 STATIC_LOCATION = "/static/"
 
 MEDIA_LOCATION = "/media/"
