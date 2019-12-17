@@ -126,7 +126,10 @@ STATICFILES_STORAGE = 'storages.backends.azure_storage.AzureStorage'
 DEFAULT_FILE_STORAGE = 'django_project.custom_azure.AzureMediaStorage'
 
 STATIC_LOCATION = "static"
+# For Heroku's setup
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 MEDIA_LOCATION = "media"
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 AZURE_ACCOUNT_NAME = os.environ.get("AZURE_STORAGE_ACCOUNT_NAME")
 AZURE_ACCOUNT_KEY = os.environ.get("AZURE_STORAGE_ACCOUNT_KEY1")
