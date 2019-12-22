@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "778f766e2744d3ce08ce361136c84d4f4d7fd8da1465f0d6637349958d0cdc8f"
+            "sha256": "305a9ccdd153f6cb1ec5cfcfd74bb523c2b84f8cb5611e290b023eee55b7ed8a"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -148,7 +148,6 @@
                 "sha256:8dcbee7b323c3898ae92f5e2d88c3e6201f197ae48a712970929c4646cc2580a",
                 "sha256:fdca6b5ecf17e5583f6fd3a20cd4e4e0335a3d91131d62b50cfef40d657234b2"
             ],
-            "index": "pypi",
             "version": "==4.0.0"
         },
         "azure-mgmt-advisor": {
