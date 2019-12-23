@@ -55,7 +55,6 @@ azure-storage-common = "*"
 azure-storage-file = "*"
 azure-storage-queue = "*"
 azure = "*"
-fcntl = "*"
 
 [requires]
 python_version = "3.7"
