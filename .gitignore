@@ -1,6 +1,8 @@
 venv/
 .vscode
 Test.py
+pckgs.txt
+pckg_uninstall.py
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
