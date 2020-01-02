@@ -1,4 +1,8 @@
 {
     "python.pythonPath": "C:\\Users\\victo\\.virtualenvs\\Corey_Schafer_-_Django_Framework-jrC3nBNH\\Scripts\\python.exe",
-    "python.autoComplete.extraPaths": ["./django_project"]
+    "python.autoComplete.extraPaths": [
+        "./django_project"
+    ],
+    "python.linting.pylintEnabled": true,
+    "python.linting.enabled": true,
 }

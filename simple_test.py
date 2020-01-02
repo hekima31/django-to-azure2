@@ -1,4 +1,7 @@
 import os
+from dotenv import load_dotenv, find_dotenv
+load_dotenv(find_dotenv())
+
 print("Synchronization")
 print("Synchronization")
 print("Synchronization")
@@ -14,4 +17,4 @@ print(os.environ.get("GMAIL_USERNAME"))
 print(os.environ.get("GMAIL_APP_PASSWORD"))
 print(os.environ.get("OUTLOOK_USERNAME"))
 print(os.environ.get("OUTLOOK_PASSWORD"))
-print(os.environ.get("DJANGO_SECRET_KEY"))
+print(os.getenv("DJANGO_SECRET_KEY"))
