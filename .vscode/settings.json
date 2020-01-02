@@ -1,7 +1,8 @@
 {
     "python.pythonPath": "venv/bin/python",
     "python.autoComplete.extraPaths": [
-        "./django_project"
+        "./django_project",
+        "/mnt/c/Users/victo/OneDrive - Curtin University of Technology Australia/Learning/Python/Corey Schafer - Django Framework/django_project",
     ],
     "python.linting.pylintEnabled": true,
     "python.linting.enabled": true,

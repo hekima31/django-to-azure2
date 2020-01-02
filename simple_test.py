@@ -3,7 +3,7 @@ from dotenv import load_dotenv, find_dotenv
 load_dotenv(find_dotenv())
 
 print("Synchronization")
-print("Synchronization")
+print("Synchronizations")
 print("Synchronization")
 print("Synchronization")
 print("Synchronization")
