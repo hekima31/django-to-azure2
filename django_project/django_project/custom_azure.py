@@ -1,5 +1,7 @@
 from storages.backends.azure_storage import AzureStorage
 import os
+from dotenv import load_dotenv
+load_dotenv()
 
 
 class AzureMediaStorage(AzureStorage):
