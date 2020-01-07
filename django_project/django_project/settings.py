@@ -166,7 +166,7 @@ DEFAULT_FROM_EMAIL = os.environ.get("OUTLOOK_USERNAME")
 EMAIL_HOST_USER = os.environ.get("OUTLOOK_USERNAME")
 EMAIL_HOST_PASSWORD = os.environ.get("OUTLOOK_PASSWORD")
 
-
+# # Deployment checklist for production
 # CSRF_COOKIE_SECURE = True
 # SESSION_COOKIE_SECURE = True
 # SECURE_CONTENT_TYPE_NOSNIFF = True

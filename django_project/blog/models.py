@@ -14,7 +14,7 @@ class Post(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     objects = models.Manager()
     # Don't necessarily need a default image for each blog
-    image = models.ImageField(upload_to="post_pics")
+    image = models.ImageField(default="default.jpg", upload_to="post_pics")
 
     # Telling the function how the Post function should be returned
     # To return it in readable format
