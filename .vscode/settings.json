@@ -1,5 +1,5 @@
 {
-    "python.pythonPath": "venv/bin/python3.7",
+    "python.pythonPath": "C:\\Users\\victo\\.virtualenvs\\Corey_Schafer_-_Django_Framework-jrC3nBNH\\Scripts\\python.exe",
     "python.autoComplete.extraPaths": [
         "./django_project",
         "/mnt/c/Users/victo/OneDrive - Curtin University of Technology Australia/Learning/Python/Corey Schafer - Django Framework/django_project",
