@@ -11,7 +11,7 @@ print("Synchronization")
 print("Synchronization")
 print("Synchronization")
 
-
+# Testing things out here
 # print(os.environ.get("GMAIL_USERNAME"))
 print(os.environ.get("GMAIL_APP_PASSWORD"))
 # print(os.environ.get("OUTLOOK_USERNAME"))
