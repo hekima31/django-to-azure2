@@ -19,8 +19,25 @@
         </div>
         <h2 class="article-title">{{ object.title }}</h2>
         <img class="img-responsive" src="{{object.image.url}}" alt="" width="100%">
-        <p class="article-content">{{ object.content }}</p>
+        <!--Adding safe to render HTML output from CKeditor unescaped -->
+        <p class="article-content">{{ object.content|safe }}</p>
     </div>
 </article>
 
 {% endblock content %}
+
+{% block sidebar %}
+<h3></h3>
+<img class="rounded-circle"
+    src="https://iamlearningstorage.blob.core.windows.net/media/media%2Fprofile_pics%2FMe_Eni_and_Jachin_Clipped.jpg"
+    alt="Cannot Find the Image" width="50%">
+<p class='text-muted'>Welcome to my website! My name is Victor and I built this website using Python and the Django
+    Framework. This blog site contains all my learning experiences. Do enjoy!
+<ul class="list-group">
+    <li class="list-group-item list-group-item-light">Latest Posts</li>
+    <li class="list-group-item list-group-item-light">Announcements</li>
+    <li class="list-group-item list-group-item-light">Calendars</li>
+    <li class="list-group-item list-group-item-light">etc</li>
+</ul>
+</p>
+{% endblock sidebar %}

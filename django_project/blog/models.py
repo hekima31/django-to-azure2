@@ -3,11 +3,15 @@ from django.contrib.auth.models import User
 from django.utils import timezone
 from django.urls import reverse
 from PIL import Image
+from ckeditor.fields import RichTextField
+from ckeditor_uploader.fields import RichTextUploadingField
 
 
 class Post(models.Model):
     title = models.CharField(max_length=100)
-    content = models.TextField()
+    # content = models.TextField()
+    # description = RichTextField(config_name="full")
+    content = RichTextUploadingField(config_name="full")
     # No brackets in the timezone function because it is the function that is
     date_posted = models.DateTimeField(default=timezone.now)
     # required

@@ -51,7 +51,7 @@ class PostDetailView(DetailView):
 class PostCreateView(LoginRequiredMixin, CreateView):
     # This view would need form fields since new blog is being created
     model = Post
-    fields = ["title", "content", "image"]
+    fields = ["title", "content", "image", ]
 
     # Function to override the validation process, inserting the user as author before validating
     def form_valid(self, form):

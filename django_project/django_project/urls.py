@@ -36,8 +36,19 @@ urlpatterns = [
         template_name="users/password_reset_confirm.html"), name="password_reset_confirm"),
     path('password-reset-complete/', auth_views.PasswordResetCompleteView.as_view(
         template_name="users/password_reset_complete.html"), name="password_reset_complete"),
-    path('blog/', include("blog.urls")),
+    path('', include("blog.urls")),  # Mapped root to blog site
+    # Adding CKEditor to urls.py
+    path('ckeditor/', include('ckeditor_uploader.urls')),
 ]
+
+# CKEditor configuration settings
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'full',
+        'height': 300,
+        'width': 300,
+    },
+}
 
 # Ensures that this runs only in dev(debug) mode.
 # Media root is different when in production mode.

@@ -45,6 +45,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'storages',
     'azure',
+    "ckeditor",
+    "ckeditor_uploader",
 ]
 
 MIDDLEWARE = [
@@ -189,3 +191,59 @@ MEDIA_URL = f'https://{AZURE_CUSTOM_DOMAIN}/{MEDIA_LOCATION}/'
 
 # Configures Heroku with settings from Django
 django_heroku.settings(locals())
+
+# Location within media root where CKEditor uploads files
+CKEDITOR_UPLOAD_PATH = os.path.join(MEDIA_ROOT, "ckeditor/")
+
+# Telling CKEditor where its assets are located
+# CKEDITOR_BASEPATH = os.path.join(STATIC_ROOT, "ckeditor/")
+
+# CKEditor configuation, taken from https://www.howtobuildsoftware.com/index.php/how-do/bFhn/javascript-django-django-admin-ckeditor-django-ckeditor-how-can-i-get-my-django-ckeditor-installation-to-recognize
+CKEDITOR_CONFIGS = {
+
+    'default': {
+        'toolbar': [
+            ['Undo', 'Redo',
+             '-', 'Bold', 'Italic', 'Underline',
+             '-', 'Link', 'Unlink', 'Anchor',
+             '-', 'Format',
+             '-', 'SpellChecker', 'Scayt',
+             '-', 'Maximize',
+             '-', 'Language',
+             ],
+        ],
+        'height': '100%',
+        'width': '100%',
+        'toolbarCanCollapse': False,
+    },
+    'full': {
+        'toolbar': [
+            ['Undo', 'Redo',
+             '-', 'Bold', 'Italic', 'Underline', 'NumberedList', 'BulletedList',
+             '-', 'Outdent', 'Indent', 'Blockquote', 'CreateDiv',
+             '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock',
+             '-', 'TextColor', 'BGColor',
+             '-', 'Maximize', 'ShowBlocks', 'Image', 'uploadimage',
+             '-', 'Cut', 'Copy', 'Paste', 'PasteText',
+             ],
+            ['-', 'SpecialChar',
+             '-', 'Source',
+             ],
+            [
+                '-', 'Styles', 'Format', 'Font', 'FontSize'
+            ],
+            [
+                '-', 'BidiLtr', 'BidiRtl'
+            ]
+        ],
+        'width': '100%',
+        'height': '600px',
+        'toolbarCanCollapse': False,
+    },
+    'disable': {
+        'toolbar': [],
+        'width': '100%',
+        'height': '600px',
+        'toolbarCanCollapse': False,
+    },
+}

@@ -16,7 +16,8 @@ class Profile(models.Model):
 
 # dunder str method tells the class how it should display itself when returned
     def __str__(self):
-        return f"{self.user.username} Profile"
+        return f"{self.user} Profile"
+        # This was {self.user.username} previously
 
     # def save(self, *args, **kwargs):#Parent save function run normally when profile is created/updated
     #     super().save(*args, **kwargs)

@@ -10,11 +10,13 @@
       <small class="text-muted">{{ post.date_posted | date:"F d, Y" }}</small>
     </div>
     <h2><a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h2>
-    <p class="article-content">{{ post.content }}</p>
+    <!--Adding safe to render HTML output from CKeditor unescaped -->
+    <p class="article-content">{{ post.content|safe}}</p>
     <img class="img-thumbnail" src="{{post.image.url}}" alt="" width="50%">
   </div>
 </article>
 {% endfor %}
+
 
 
 {% if is_paginated %}
